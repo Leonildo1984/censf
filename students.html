@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Alunos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        /* Estilos básicos para centralizar o conteúdo e garantir que as imagens se ajustem */
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            height: auto; /* Mantém a proporção da imagem */
+            display: block; /* Remove espaço extra abaixo da imagem */
+            margin: 0 auto; /* Centraliza a imagem se ela for menor que a largura do contêiner */
+            margin-top: 15px; /* Espaçamento entre o texto e a imagem */
+        }
+        /* Ajustes para botões de navegação e paginação, se necessário */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #007aff; /* Cor padrão do Framework7 ou sua cor de preferência */
+        }
+        .swiper-pagination-bullet-active {
+            background: #007aff; /* Cor da bolinha de paginação ativa */
+        }
+
+        /* Estilos para o novo botão */
+        .ongdope-button {
+            display: inline-block;
+            background-color: #007aff; /* Uma cor azul que combina com o tema */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px; /* Espaçamento acima do botão */
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ongdope-button:hover {
+            background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page" data-name="students">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Voltar</span>
+                    </a>
+                </div>
+                <div class="title">Gestão de Alunos</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="block-title">Alunos em Destaque</div>
+            <div class="block">
+                <p>Confira alguns destaques de alunos no carrossel abaixo.</p>
+            </div>
+
+            <div class="swiper swiper-init" 
+                 data-pagination='{"el": ".swiper-pagination", "clickable": true}'
+                 data-navigation='{"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"}'
+                 data-loop="true"> <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="block-strong text-align-center">
+                            <h3>Aluno Destaque 1</h3>
+                            <p>João Silva: Nosso aluno mais dedicado, com excelente desempenho em todas as disciplinas.</p>
+                            <img src="img/students.png" alt="Aluno 1">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="block-strong text-align-center">
+                            <h3>Aluno Destaque 2</h3>
+                            <p>Maria Oliveira: Campeã olímpica de matemática, sempre buscando novos desafios.</p>
+                            <img src="img/teachers.png" alt="Aluno 2">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="block-strong text-align-center">
+                            <h3>Aluno Destaque 3</h3>
+                            <p>Pedro Costa: Líder estudantil e organizador de diversos eventos acadêmicos.</p>
+                            <img src="img/students.png" alt="Aluno 3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            ---
+
+            <div class="block-title">Opções de Gestão</div>
+            <div class="block">
+                <p>Aqui você ainda pode encontrar opções para adicionar, editar ou remover alunos.</p>
+                <ul>
+                    <li>Adicionar Novo Aluno</li>
+                    <li>Editar Aluno Existente</li>
+                    <li>Remover Aluno</li>
+                </ul>
+            </div>
+
+            <div class="block text-align-center">
+                <p>Acesse o site principal da ONG para mais informações:</p>
+                <a href="https://ongdope.netlify.app/" class="ongdope-button" target="_blank">Acessar ONGDOPE</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+</body>
+</html>
